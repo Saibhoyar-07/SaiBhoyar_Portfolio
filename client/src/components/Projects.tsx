@@ -187,10 +187,10 @@ export const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="relative min-h-screen w-full py-28 overflow-hidden z-10">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="projects" className="relative min-h-screen w-full py-20 sm:py-24 lg:py-28 overflow-hidden z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <ScrollReveal className="mb-16 flex flex-col items-start">
+        <ScrollReveal className="mb-10 sm:mb-16 flex flex-col items-start">
           <span className="text-xs font-mono text-[#00D4FF] uppercase tracking-widest mb-2 font-semibold">03 / Projects</span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans">
             Featured Work<span className="text-[#6C3BFF]">.</span>
@@ -199,11 +199,11 @@ export const Projects: React.FC = () => {
         </ScrollReveal>
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              className="glass-panel rounded-2xl border border-white/5 overflow-hidden flex flex-col justify-between group hover:border-white/15 transition-all duration-300 relative bg-[#090910]"
+              className="glass-panel min-w-0 rounded-2xl border border-white/5 overflow-hidden flex flex-col justify-between group hover:border-white/15 transition-all duration-300 relative bg-[#090910]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -254,23 +254,23 @@ export const Projects: React.FC = () => {
       <AnimatePresence>
         {selectedProject && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#050505]/85 backdrop-blur-md"
+              className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#050505]/85 backdrop-blur-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             {/* Modal Box */}
             <motion.div
-              className="w-full max-w-3xl bg-[#090912] border border-white/10 rounded-2xl overflow-hidden shadow-2xl max-h-[85vh] flex flex-col"
+              className="w-full max-w-3xl bg-[#090912] border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl max-h-[calc(100svh-1.5rem)] sm:max-h-[85vh] flex flex-col"
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
               transition={{ type: 'spring', damping: 25, stiffness: 250 }}
             >
               {/* Header bar */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-white/5">
-                <div>
-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
+              <div className="flex items-start justify-between gap-3 px-4 sm:px-6 py-4 border-b border-white/5 bg-white/5">
+                <div className="min-w-0">
+                  <h3 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2 break-words">
                     {selectedProject.title}
                   </h3>
                   <span className="text-xs font-medium text-gray-400">
@@ -279,14 +279,14 @@ export const Projects: React.FC = () => {
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-white cursor-pointer"
+                  className="shrink-0 min-w-9 min-h-9 p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-white cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Modal Body */}
-              <div className="flex-1 overflow-y-auto p-6 md:p-8 flex flex-col gap-6 text-left">
+              <div className="flex-1 overflow-y-auto overscroll-contain p-4 sm:p-6 md:p-8 flex flex-col gap-6 text-left">
                 {/* Description */}
                 <div>
                   <h4 className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-wider mb-2">Project Overview</h4>
@@ -335,12 +335,12 @@ export const Projects: React.FC = () => {
               </div>
 
               {/* Action Buttons Footer */}
-              <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-white/5 bg-white/5">
+              <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-2 sm:gap-3 px-4 sm:px-6 py-4 border-t border-white/5 bg-white/5">
                 <a
                   href={selectedProject.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs flex items-center gap-2"
+                  className="min-h-11 justify-center px-5 py-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs flex items-center gap-2"
                 >
                   <Github className="w-4 h-4" />
                   GitHub Repository
@@ -349,7 +349,7 @@ export const Projects: React.FC = () => {
                   href={selectedProject.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#6C3BFF] to-[#00D4FF] hover:brightness-110 text-white font-semibold text-xs flex items-center gap-2 shadow-[0_0_15px_rgba(108,59,255,0.2)]"
+                  className="min-h-11 justify-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#6C3BFF] to-[#00D4FF] hover:brightness-110 text-white font-semibold text-xs flex items-center gap-2 shadow-[0_0_15px_rgba(108,59,255,0.2)]"
                 >
                   <ExternalLink className="w-4 h-4" />
                   Live Preview

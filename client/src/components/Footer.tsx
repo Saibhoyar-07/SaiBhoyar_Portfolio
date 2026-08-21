@@ -8,14 +8,14 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="relative w-full border-t border-white/5 py-12 bg-[#050508]/85 backdrop-blur-sm z-10 select-none">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
         
         {/* Left Side: Brand & Copyright */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-1">
           <span className="font-sans font-extrabold text-sm tracking-widest text-white uppercase">
             Sai Bhoyar<span className="text-[#00D4FF]">.</span>
           </span>
-          <span className="text-[10px] font-mono text-gray-500">
+          <span className="text-[10px] font-mono text-gray-500 break-words">
             © 2026 Sai Bhoyar. All rights reserved. Built with MERN, R3F & Tailwind v4.
           </span>
         </div>

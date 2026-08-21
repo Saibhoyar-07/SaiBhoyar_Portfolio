@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen w-full flex items-center justify-center pt-24 pb-16 overflow-hidden"
+      className="relative min-h-[100svh] w-full flex items-center justify-center pt-28 pb-14 sm:pt-32 sm:pb-16 overflow-hidden"
     >
       {/* Background Glows (Aurora Mesh) */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[350px] md:w-[500px] h-[350px] md:h-[500px] rounded-full bg-[#6C3BFF]/10 blur-[100px] pointer-events-none" />
@@ -38,9 +38,9 @@ export const Hero: React.FC = () => {
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center z-10 w-full">
         {/* Text Info */}
-        <div className="lg:col-span-7 flex flex-col items-start text-left">
+        <div className="lg:col-span-7 min-w-0 flex flex-col items-start text-left">
           {/* Welcome Tag */}
           <motion.div 
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm"
@@ -63,7 +63,7 @@ export const Hero: React.FC = () => {
           </motion.h2>
 
           <motion.h1 
-            className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 font-sans select-none"
+            className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none text-white mb-6 font-sans select-none"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -72,11 +72,11 @@ export const Hero: React.FC = () => {
           </motion.h1>
 
           {/* Dynamic Role Swapper */}
-          <div className="h-12 md:h-16 flex items-center mb-8 overflow-hidden">
+          <div className="min-h-12 sm:h-12 md:h-16 flex items-center mb-8 overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={roleIndex}
-                className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-gradient-cyan-neon font-sans"
+                className="max-w-full text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-gradient-cyan-neon font-sans"
                 initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -25 }}
@@ -99,21 +99,21 @@ export const Hero: React.FC = () => {
 
           {/* Action CTAs */}
           <motion.div
-            className="flex flex-wrap gap-4 items-center mb-12 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center mb-10 sm:mb-12 w-full sm:w-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
           >
             <button
               onClick={() => handleScrollTo('projects')}
-              className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#6C3BFF] to-[#00D4FF] hover:brightness-110 text-white font-semibold tracking-wide text-sm flex items-center gap-2 group transition-all cursor-pointer shadow-[0_0_20px_rgba(108,59,255,0.3)] hover:shadow-[0_0_30px_rgba(108,59,255,0.5)]"
+              className="w-full sm:w-auto min-h-11 justify-center px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#6C3BFF] to-[#00D4FF] hover:brightness-110 text-white font-semibold tracking-wide text-sm flex items-center gap-2 group transition-all cursor-pointer shadow-[0_0_20px_rgba(108,59,255,0.3)] hover:shadow-[0_0_30px_rgba(108,59,255,0.5)]"
             >
               View Projects
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
             <button
               onClick={() => handleScrollTo('contact')}
-              className="px-8 py-3.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold tracking-wide text-sm transition-all cursor-pointer"
+              className="w-full sm:w-auto min-h-11 px-8 py-3.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold tracking-wide text-sm transition-all cursor-pointer"
             >
               Hire Me
             </button>
@@ -123,7 +123,7 @@ export const Hero: React.FC = () => {
                 e.preventDefault();
                 alert('Downloading resume... (Replace link with actual Resume URL)');
               }}
-              className="px-6 py-3.5 rounded-xl border border-white/5 hover:border-[#6C3BFF]/30 text-gray-300 hover:text-[#7DF9FF] text-sm flex items-center gap-2 hover:bg-[#6C3BFF]/10 transition-all cursor-pointer"
+              className="w-full sm:w-auto min-h-11 justify-center px-6 py-3.5 rounded-xl border border-white/5 hover:border-[#6C3BFF]/30 text-gray-300 hover:text-[#7DF9FF] text-sm flex items-center gap-2 hover:bg-[#6C3BFF]/10 transition-all cursor-pointer"
             >
               <Download className="w-4 h-4" />
               Resume

@@ -50,14 +50,14 @@ const ACHIEVEMENTS: Achievement[] = [
 
 export const Achievements: React.FC = () => {
   return (
-    <section id="achievements" className="relative min-h-[70vh] w-full py-28 overflow-hidden z-10">
+    <section id="achievements" className="relative min-h-[70vh] w-full py-20 sm:py-24 lg:py-28 overflow-hidden z-10">
       {/* Background Glows */}
       <div className="absolute top-1/4 right-10 w-[300px] h-[300px] bg-[#6C3BFF]/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-10 w-[300px] h-[300px] bg-[#00D4FF]/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <ScrollReveal className="mb-16 flex flex-col items-start">
+        <ScrollReveal className="mb-10 sm:mb-16 flex flex-col items-start">
           <span className="text-xs font-mono text-[#00D4FF] uppercase tracking-widest mb-2 font-semibold">05 / Milestones</span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans">
             Key Achievements<span className="text-[#6C3BFF]">.</span>
@@ -66,11 +66,11 @@ export const Achievements: React.FC = () => {
         </ScrollReveal>
 
         {/* Achievements Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {ACHIEVEMENTS.map((item, idx) => (
             <motion.div
               key={item.id}
-              className="glass-panel p-8 rounded-2xl border border-white/5 bg-[#090910] hover:border-white/10 transition-all duration-300 relative group flex flex-col justify-between items-start text-left overflow-hidden"
+              className="glass-panel p-5 sm:p-8 rounded-2xl border border-white/5 bg-[#090910] hover:border-white/10 transition-all duration-300 relative group flex flex-col justify-between items-start text-left overflow-hidden"
               whileHover={{ y: -6 }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

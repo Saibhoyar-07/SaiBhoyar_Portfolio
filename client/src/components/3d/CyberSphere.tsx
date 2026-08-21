@@ -121,7 +121,8 @@ export const CyberSphere: React.FC = () => {
       <Canvas
         camera={{ position: [0, 0, 4.8], fov: 60 }}
         gl={{ antialias: true, alpha: true }}
-        style={{ width: '100vw', height: '100vh', position: 'fixed', top: 0, left: 0 }}
+        dpr={[1, 1.5]}
+        style={{ width: '100%', height: '100vh', position: 'fixed', top: 0, left: 0 }}
       >
         <ambientLight intensity={0.4} />
         <pointLight position={[10, 10, 10]} intensity={1.5} color="#6C3BFF" />

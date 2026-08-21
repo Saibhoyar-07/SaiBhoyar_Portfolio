@@ -107,7 +107,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
             </motion.h1>
             
             <motion.div
-              className="text-xs font-mono text-gray-500 tracking-wider h-5 flex items-center justify-center"
+              className="max-w-[calc(100vw-2rem)] text-center text-xs font-mono text-gray-500 tracking-wider min-h-5 flex items-center justify-center"
               key={phraseIndex}
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
@@ -120,10 +120,10 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           </div>
 
           {/* Minimalist frames */}
-          <div className="absolute bottom-6 left-6 text-[10px] font-mono text-gray-600">
+          <div className="hidden sm:block absolute bottom-6 left-6 text-[10px] font-mono text-gray-600">
             PORTFOLIO v2.0 // WGL_INIT
           </div>
-          <div className="absolute bottom-6 right-6 text-[10px] font-mono text-gray-600">
+          <div className="hidden sm:block absolute bottom-6 right-6 text-[10px] font-mono text-gray-600">
             © 2026 SAI BHOYAR
           </div>
         </motion.div>

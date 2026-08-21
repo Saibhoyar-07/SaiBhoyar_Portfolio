@@ -78,14 +78,14 @@ export const Navbar: React.FC = () => {
       <motion.header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'py-4 bg-[#050505]/75 backdrop-blur-md border-b border-white/5' 
-            : 'py-6 bg-transparent'
+            ? 'py-3 sm:py-4 bg-[#050505]/75 backdrop-blur-md border-b border-white/5' 
+            : 'py-4 sm:py-6 bg-transparent'
         }`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
           {/* Logo */}
           <div 
             onClick={() => handleNavClick('home')}
@@ -96,13 +96,13 @@ export const Navbar: React.FC = () => {
                 <Terminal className="w-5 h-5 text-[#7DF9FF] group-hover:rotate-6 transition-transform" />
               </div>
             </div>
-            <span className="font-sans font-extrabold text-lg tracking-wider text-white uppercase">
+            <span className="font-sans font-extrabold text-base sm:text-lg tracking-wider text-white uppercase whitespace-nowrap">
               sai bhoyar<span className="text-[#00D4FF]">.</span>
             </span>
           </div>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden md:flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md">
+          <nav className="hidden lg:flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
@@ -126,10 +126,10 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Mobile Hamburguer Menu */}
-          <div className="md:hidden flex items-center gap-3">
+          <div className="lg:hidden flex items-center gap-3">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white cursor-pointer"
+              className="min-w-11 min-h-11 p-2.5 rounded-xl bg-white/5 border border-white/10 text-white cursor-pointer"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -141,7 +141,7 @@ export const Navbar: React.FC = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-[#050505] flex flex-col justify-center px-8 md:hidden"
+            className="fixed inset-0 z-40 bg-[#050505] flex flex-col justify-center overflow-y-auto px-6 py-24 sm:px-8 lg:hidden"
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
@@ -151,12 +151,12 @@ export const Navbar: React.FC = () => {
             <div className="absolute top-1/4 right-0 w-[250px] h-[250px] rounded-full bg-[#6C3BFF]/10 blur-[80px]" />
             <div className="absolute bottom-1/4 left-0 w-[200px] h-[200px] rounded-full bg-[#00D4FF]/10 blur-[80px]" />
 
-            <div className="flex flex-col gap-6 text-left">
+            <div className="relative flex flex-col gap-5 text-left">
               {NAV_ITEMS.map((item, index) => (
                 <motion.button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className="text-3xl font-bold tracking-tight text-gray-300 hover:text-white flex items-center gap-4 cursor-pointer"
+                  className="min-h-11 text-2xl sm:text-3xl font-bold tracking-tight text-gray-300 hover:text-white flex items-center gap-4 cursor-pointer"
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.08 }}

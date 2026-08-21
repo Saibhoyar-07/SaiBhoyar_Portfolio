@@ -46,14 +46,14 @@ export const About: React.FC = () => {
   const timelineData = activeTab === 'experience' ? TIMELINE_EXPERIENCE : TIMELINE_EDUCATION;
 
   return (
-    <section id="about" className="relative min-h-screen w-full py-28 overflow-hidden z-10">
+    <section id="about" className="relative min-h-screen w-full py-20 sm:py-24 lg:py-28 overflow-hidden z-10">
       {/* Visual background blurs */}
       <div className="absolute top-1/3 right-10 w-[300px] h-[300px] rounded-full bg-[#6C3BFF]/5 blur-[90px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-[250px] h-[250px] rounded-full bg-[#00D4FF]/5 blur-[90px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <ScrollReveal className="mb-16 flex flex-col items-start">
+        <ScrollReveal className="mb-10 sm:mb-16 flex flex-col items-start">
           <span className="text-xs font-mono text-[#00D4FF] uppercase tracking-widest mb-2 font-semibold">01 / Profile</span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans">
             About Me<span className="text-[#6C3BFF]">.</span>
@@ -61,10 +61,10 @@ export const About: React.FC = () => {
           <div className="w-16 h-1.5 bg-gradient-to-r from-[#6C3BFF] to-[#00D4FF] rounded-full mt-4" />
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left Column: Stats and Info */}
           <ScrollReveal className="lg:col-span-6 flex flex-col gap-8" direction="left">
-            <div className="glass-panel p-8 rounded-2xl border border-white/5 relative overflow-hidden">
+            <div className="glass-panel p-5 sm:p-8 rounded-2xl border border-white/5 relative overflow-hidden">
               {/* Aurora overlay inside box */}
               <div className="absolute -top-12 -left-12 w-28 h-28 bg-[#6C3BFF]/20 rounded-full blur-2xl pointer-events-none" />
               
@@ -91,7 +91,7 @@ export const About: React.FC = () => {
               {STATS.map((stat, idx) => (
                 <div 
                   key={idx} 
-                  className="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:border-[#6C3BFF]/30 transition-colors"
+                  className="glass-panel p-4 sm:p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:border-[#6C3BFF]/30 transition-colors"
                 >
                   <span className="text-3xl md:text-4xl font-extrabold text-gradient-cyan-neon mb-2">
                     {stat.value}
@@ -107,10 +107,10 @@ export const About: React.FC = () => {
           {/* Right Column: Timelines */}
           <ScrollReveal className="lg:col-span-6 flex flex-col gap-6" direction="right" delay={0.08}>
             {/* Timeline Tab Switches */}
-            <div className="flex bg-white/5 border border-white/10 rounded-xl p-1 self-start">
+            <div className="flex w-full sm:w-auto bg-white/5 border border-white/10 rounded-xl p-1 self-start">
               <button
                 onClick={() => setActiveTab('experience')}
-                className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
+                className={`flex flex-1 sm:flex-none items-center justify-center gap-2 px-3 sm:px-6 py-2.5 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
                   activeTab === 'experience'
                     ? 'bg-gradient-to-r from-[#6C3BFF] to-[#00D4FF] text-white'
                     : 'text-gray-400 hover:text-white'
@@ -121,7 +121,7 @@ export const About: React.FC = () => {
               </button>
               <button
                 onClick={() => setActiveTab('education')}
-                className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
+                className={`flex flex-1 sm:flex-none items-center justify-center gap-2 px-3 sm:px-6 py-2.5 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
                   activeTab === 'education'
                     ? 'bg-gradient-to-r from-[#6C3BFF] to-[#00D4FF] text-white'
                     : 'text-gray-400 hover:text-white'

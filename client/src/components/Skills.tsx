@@ -161,14 +161,14 @@ const TiltCard: React.FC<{ category: SkillCategory }> = ({ category }) => {
 
 export const Skills: React.FC = () => {
   return (
-    <section id="skills" className="relative min-h-screen w-full py-28 overflow-hidden z-10">
+    <section id="skills" className="relative min-h-screen w-full py-20 sm:py-24 lg:py-28 overflow-hidden z-10">
       {/* Aurora Blurs */}
       <div className="absolute top-1/4 left-10 w-[300px] h-[300px] bg-[#00D4FF]/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-10 w-[300px] h-[300px] bg-[#6C3BFF]/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <ScrollReveal className="mb-16 flex flex-col items-start">
+        <ScrollReveal className="mb-10 sm:mb-16 flex flex-col items-start">
           <span className="text-xs font-mono text-[#00D4FF] uppercase tracking-widest mb-2 font-semibold">02 / Expertise</span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans">
             Technical Stack<span className="text-[#6C3BFF]">.</span>

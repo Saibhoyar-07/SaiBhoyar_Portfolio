@@ -11,6 +11,10 @@
 
 /* Custom Base Styles */
 @layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   html {
     scroll-behavior: initial; /* Lenis handles smooth scrolling */
     scroll-padding-top: 5.5rem;
@@ -21,6 +25,20 @@
     color: #F3F4F6;
     font-family: var(--font-sans);
     overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  img, video, svg {
+    max-width: 100%;
+  }
+
+  button, input, textarea, select {
+    min-width: 0;
   }
 
   /* Custom scrollbar for modern appearance */
@@ -37,6 +55,12 @@
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #6C3BFF;
+  }
+}
+
+@media (max-width: 639px) {
+  input, textarea, select {
+    font-size: 16px;
   }
 }
 
