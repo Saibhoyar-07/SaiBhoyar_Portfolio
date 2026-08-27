@@ -1,56 +1,61 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, BookOpen, Users, ArrowUpRight, Award } from 'lucide-react';
+import { Trophy, Code2, ExternalLink, Award } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 
-interface Achievement {
+interface Certification {
   id: string;
   title: string;
   subtitle: string;
   desc: string;
   date: string;
   link?: string;
+  linkLabel?: string;
   icon: React.ReactNode;
   gradient: string;
   color: string;
 }
 
-const ACHIEVEMENTS: Achievement[] = [
+const CERTIFICATIONS: Certification[] = [
+  {
+    id: 'analytics-vidhya',
+    title: 'Certificate of Completion',
+    subtitle: 'Analytics Vidhya',
+    desc: 'Completed an Analytics Vidhya course. View the official certificate to verify this credential.',
+    date: 'Verified',
+    link: 'https://courses.analyticsvidhya.com/certificates/rdugzdnjnb',
+    icon: <Award className="w-5 h-5 text-[#7DF9FF]" />,
+    gradient: 'from-[#00D4FF]/20 to-[#6C3BFF]/20',
+    color: '#00D4FF'
+  },
   {
     id: 'hackathon',
-    title: 'Top 5 Finalist',
-    subtitle: 'National Technical Hackathon',
-    desc: 'Engineered a smart automation prototype within 36 hours. Recognized for architectural optimization and real-time dashboard responsiveness.',
-    date: '2024',
+    title: 'Full-Stack Web Development',
+    subtitle: 'Apna College',
+    desc: 'Completed full-stack web development training, covering the practical skills needed to build modern web applications.',
+    date: 'Verified',
+    link: 'https://www.apnacollege.in/admin/api/certificate_v2/681cba9a8c8e8811e50bf560/user/67b346d3424b81d2cf019426?lw_client=62a6cd5e1e9e2fbf212d608d&access_token=TCk9VCi1REHFZOeoJvRbbV9c4ZqKQPtShsMtOt76',
     icon: <Trophy className="w-5 h-5 text-[#7DF9FF]" />,
     gradient: 'from-[#00D4FF]/20 to-[#6C3BFF]/20',
     color: '#00D4FF'
   },
   {
     id: 'research',
-    title: 'Published Research Paper',
-    subtitle: 'International Journal of CSE',
-    desc: 'Authored and published a paper on machine learning classification performance and optimization. Presented findings at a regional IEEE conference.',
-    date: '2024',
-    icon: <BookOpen className="w-5 h-5 text-purple-400" />,
+    title: 'Alpha (DSA with Java)',
+    subtitle: 'Apna College',
+    desc: 'Completed the Alpha course in data structures and algorithms using Java.',
+    date: 'Completed',
+    link: '/certificates/dsa-certificate.pdf',
+    linkLabel: 'verify',
+    icon: <Code2 className="w-5 h-5 text-purple-400" />,
     gradient: 'from-[#6C3BFF]/20 to-pink-500/20',
     color: '#6C3BFF'
-  },
-  {
-    id: 'lead',
-    title: 'Event Promotion Team Lead',
-    subtitle: 'Annual Tech Festival',
-    desc: 'Coordinated digital outreach strategies and led a team of 15 organizers to drive engagement, securing over 5,000+ registrations across national events.',
-    date: '2023',
-    icon: <Users className="w-5 h-5 text-[#0088FF]" />,
-    gradient: 'from-[#0088FF]/20 to-[#00D4FF]/20',
-    color: '#0088FF'
   }
 ];
 
 export const Achievements: React.FC = () => {
   return (
-    <section id="achievements" className="relative min-h-[70vh] w-full py-20 sm:py-24 lg:py-28 overflow-hidden z-10">
+    <section id="certifications" className="relative min-h-[70vh] w-full py-20 sm:py-24 lg:py-28 overflow-hidden z-10">
       {/* Background Glows */}
       <div className="absolute top-1/4 right-10 w-[300px] h-[300px] bg-[#6C3BFF]/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-10 w-[300px] h-[300px] bg-[#00D4FF]/5 rounded-full blur-[100px] pointer-events-none" />
@@ -58,16 +63,16 @@ export const Achievements: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal className="mb-10 sm:mb-16 flex flex-col items-start">
-          <span className="text-xs font-mono text-[#00D4FF] uppercase tracking-widest mb-2 font-semibold">05 / Milestones</span>
+          <span className="text-xs font-mono text-[#00D4FF] uppercase tracking-widest mb-2 font-semibold">05 / Credentials</span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans">
-            Key Achievements<span className="text-[#6C3BFF]">.</span>
+            Certifications<span className="text-[#6C3BFF]">.</span>
           </h2>
           <div className="w-16 h-1.5 bg-gradient-to-r from-[#6C3BFF] to-[#00D4FF] rounded-full mt-4" />
         </ScrollReveal>
 
-        {/* Achievements Grid */}
+        {/* Certifications Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {ACHIEVEMENTS.map((item, idx) => (
+          {CERTIFICATIONS.map((item, idx) => (
             <motion.div
               key={item.id}
               className="glass-panel p-5 sm:p-8 rounded-2xl border border-white/5 bg-[#090910] hover:border-white/10 transition-all duration-300 relative group flex flex-col justify-between items-start text-left overflow-hidden"
@@ -110,10 +115,21 @@ export const Achievements: React.FC = () => {
                 </p>
               </div>
 
-              {/* Decorative Milestone Badge */}
+              {/* Decorative certification badge */}
               <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#00D4FF] uppercase tracking-wider font-semibold pt-4 border-t border-white/5 w-full mt-auto">
                 <Award className="w-3.5 h-3.5 text-[#6C3BFF]" />
-                <span>Verified Achievement</span>
+                <span>Verified Certification</span>
+                {item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Verify ${item.title}`}
+                    className="ml-auto inline-flex items-center gap-1 text-[#7DF9FF] hover:text-white transition-colors"
+                  >
+                    {item.linkLabel ?? 'Verify'} <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
