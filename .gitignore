@@ -10,7 +10,7 @@ build/
 # Logs and test output
 *.log
 coverage/
-
+.client-dev-error.log
 # Local OS and editor files
 .DS_Store
 Thumbs.db
