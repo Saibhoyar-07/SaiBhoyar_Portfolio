@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/Saibhoyar-07" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-500 hover:text-white transition-colors"
@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
               <Github className="w-4 h-4" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="linkedin.com/in/sai-bhoyar-74469b326" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-500 hover:text-white transition-colors"
