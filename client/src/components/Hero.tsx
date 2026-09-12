@@ -139,7 +139,7 @@ export const Hero: React.FC = () => {
           >
             {[
               { icon: <Github className="w-5 h-5" />, url: 'https://github.com/Saibhoyar-07', label: 'GitHub' },
-              { icon: <Linkedin className="w-5 h-5" />, url: 'linkedin.com/in/sai-bhoyar-74469b326', label: 'LinkedIn' },
+              { icon: <Linkedin className="w-5 h-5" />, url: 'https://www.linkedin.com/in/sai-bhoyar-74469b326/', label: 'LinkedIn' },
               { icon: <Mail className="w-5 h-5" />, url: 'mailto:sai@example.com', label: 'Email' },
             ].map((social, idx) => (
               <a
