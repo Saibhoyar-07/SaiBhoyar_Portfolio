@@ -1,0 +1,36 @@
+
+> sai-portfolio-root@1.0.0 dev
+> concurrently "npm run dev --prefix client" "npm run dev --prefix server"
+
+[0] 
+[0] > sai-portfolio-client@1.0.0 dev
+[0] > vite --port 5173
+[0] 
+[1] 
+[1] > sai-portfolio-server@1.0.0 dev
+[1] > tsnd --respawn --transpile-only src/index.ts
+[1] 
+[0] X [ERROR] Cannot read directory "../../../..": Access is denied.
+[0] 
+[0] X [ERROR] Could not resolve "C:\\Users\\sanch\\OneDrive\\Desktop\\sai-portfolio\\client\\vite.config.ts"
+[0] 
+[0] [31mfailed to load config from C:\Users\sanch\OneDrive\Desktop\sai-portfolio\client\vite.config.ts[39m
+[0] [31merror when starting dev server:
+[0] Error: Build failed with 2 errors:
+[0] error: Cannot read directory "../../../..": Access is denied.
+[0] error: Could not resolve "C:\\Users\\sanch\\OneDrive\\Desktop\\sai-portfolio\\client\\vite.config.ts"
+[0]     at failureErrorWithLog (C:\Users\sanch\OneDrive\Desktop\sai-portfolio\client\node_modules\esbuild\lib\main.js:1467:15)
+[0]     at C:\Users\sanch\OneDrive\Desktop\sai-portfolio\client\node_modules\esbuild\lib\main.js:926:25
+[0]     at runOnEndCallbacks (C:\Users\sanch\OneDrive\Desktop\sai-portfolio\client\node_modules\esbuild\lib\main.js:1307:45)
+[0]     at buildResponseToResult (C:\Users\sanch\OneDrive\Desktop\sai-portfolio\client\node_modules\esbuild\lib\main.js:924:7)
+[0]     at C:\Users\sanch\OneDrive\Desktop\sai-portfolio\client\node_modules\esbuild\lib\main.js:951:16
+[0]     at responseCallbacks.<computed> (C:\Users\sanch\OneDrive\Desktop\sai-portfolio\client\node_modules\esbuild\lib\main.js:603:9)
+[0]     at handleIncomingPacket (C:\Users\sanch\OneDrive\Desktop\sai-portfolio\client\node_modules\esbuild\lib\main.js:658:12)
+[0]     at Socket.readFromStdout (C:\Users\sanch\OneDrive\Desktop\sai-portfolio\client\node_modules\esbuild\lib\main.js:581:7)
+[0]     at Socket.emit (node:events:509:28)
+[0]     at addChunk (node:internal/streams/readable:563:12)[39m
+[0] npm run dev --prefix client exited with code 1
+[1] [INFO] 22:05:12 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
+[1] ⚠️ [Database]: MongoDB connection failed. Falling back to local in-memory storage.
+[1] Reason: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+[1] 🚀 [Server]: Listening on port 5000

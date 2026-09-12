@@ -13,6 +13,7 @@
     "nodemailer": "^6.9.16"
   },
   "devDependencies": {
+    "@types/nodemailer": "^8.0.1",
     "concurrently": "^8.2.2"
   }
 }

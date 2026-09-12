@@ -1,0 +1,6 @@
+
+> sai-portfolio-server@1.0.0 dev
+> tsnd --respawn --transpile-only src/index.ts
+
+[INFO] 15:33:51 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
+[ERROR] 15:34:02 Error: listen EADDRINUSE: address already in use :::5000

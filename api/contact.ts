@@ -2,7 +2,17 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import mongoose from 'mongoose';
 import nodemailer from 'nodemailer';
 
-const contactSchema = new mongoose.Schema(
+interface ContactDocument {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  read: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+const contactSchema = new mongoose.Schema<ContactDocument>(
   {
     name: { type: String, required: true, trim: true },
     email: { type: String, required: true, trim: true, lowercase: true },
@@ -13,7 +23,7 @@ const contactSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-const Contact = mongoose.models.Contact || mongoose.model('Contact', contactSchema);
+const Contact = mongoose.models.Contact as mongoose.Model<ContactDocument> || mongoose.model<ContactDocument>('Contact', contactSchema);
 
 async function connectToDatabase() {
   const uri = process.env.MONGO_URI;
