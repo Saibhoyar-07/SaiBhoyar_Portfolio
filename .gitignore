@@ -1,3 +1,17 @@
 node_modules/
 dist/
 build/
+
+# Environment and local configuration
+.env
+.env.*
+!.env.example
+
+# Logs and test output
+*.log
+coverage/
+
+# Local OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
