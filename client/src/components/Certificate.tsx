@@ -34,7 +34,7 @@ const CERTIFICATIONS: Certification[] = [
     subtitle: 'Apna College',
     desc: 'Completed full-stack web development training, covering the practical skills needed to build modern web applications.',
     date: 'Verified',
-    link: 'https://www.apnacollege.in/admin/api/certificate_v2/681cba9a8c8e8811e50bf560/user/67b346d3424b81d2cf019426?lw_client=62a6cd5e1e9e2fbf212d608d&access_token=TCk9VCi1REHFZOeoJvRbbV9c4ZqKQPtShsMtOt76',
+    link: '/certificates/certificate-sigma-60-681cba9a8c8e8811e50bf560.pdf',
     icon: <Trophy className="w-5 h-5 text-[#7DF9FF]" />,
     gradient: 'from-[#00D4FF]/20 to-[#6C3BFF]/20',
     color: '#00D4FF'
@@ -45,7 +45,7 @@ const CERTIFICATIONS: Certification[] = [
     subtitle: 'Apna College',
     desc: 'Completed the Alpha course in data structures and algorithms using Java.',
     date: 'Completed',
-    link: '/certificates/dsa-certificate.pdf',
+    link: '/certificates/alpha-certificate.pdf',
     linkLabel: 'verify',
     icon: <Code2 className="w-5 h-5 text-purple-400" />,
     gradient: 'from-[#6C3BFF]/20 to-pink-500/20',
